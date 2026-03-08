@@ -361,26 +361,36 @@ body {
   color: #00f2ff;
 }
 
-/* ===== SECTION DIVIDER ===== */
-.curved-divider {
+/* ===== BLUR SECTION DIVIDER ===== */
+.blur-divider {
   position: relative;
   width: 100%;
-  height: 100px;
-  background: transparent;
+  height: 180px;
+  margin-top: -90px;
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(5, 5, 16, 0.3) 25%,
+      rgba(5, 5, 16, 0.7) 60%,
+      var(--dark-bg) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   z-index: 10;
-  margin-top: -100px;
   pointer-events: none;
+  overflow: hidden;
 }
 
-.curved-divider svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.curved-divider .shape-fill {
-  fill: #050510;
-  /* Match the dark background of the next section */
+.blur-divider::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 200px;
+  background: var(--dark-bg);
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.8;
 }
 
 

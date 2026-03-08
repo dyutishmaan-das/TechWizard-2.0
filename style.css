@@ -329,7 +329,7 @@ body {
 /* ===== ABOUT HARIDWAR UNIVERSITY ===== */
 
 .hu-section {
-  margin-top: -200px;
+  margin-top: -460px;
 }
 
 .hu-grid {
@@ -1648,7 +1648,7 @@ body {
   letter-spacing: 2px;
   margin-bottom: 16px;
   text-transform: uppercase;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .sponsors-logos {
@@ -1662,7 +1662,7 @@ body {
 .sponsor-img {
   height: 40px;
   object-fit: contain;
-  opacity: 0.7;
+  opacity: 0.9;
   transition: all 0.3s ease;
 }
 
@@ -1675,7 +1675,7 @@ body {
 .sponsor-img1 {
   height: 40px;
   object-fit: contain;
-  opacity: 0.7;
+  opacity: 0.9;
   transition: all 0.3s ease;
 }
 

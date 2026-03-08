@@ -93,13 +93,56 @@ body {
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
 }
 
+.nav-org-branding {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-right: 1px solid var(--border-glow);
+  padding-right: 14px;
+}
+
+.nav-hu-logo {
+  height: 40px;
+  object-fit: contain;
+}
+
+.nav-hu-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hu-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hu-presents {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  color: var(--text-secondary);
+  letter-spacing: 2px;
+  margin-top: 3px;
+}
+
+.nav-event-branding {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .nav-logo {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
   display: block;
   align-self: center;
@@ -1770,6 +1813,19 @@ body {
 
   .cs-divider {
     display: none;
+  }
+
+  .nav-hu-text {
+    display: none;
+  }
+
+  .nav-org-branding {
+    padding-right: 8px;
+    gap: 4px;
+  }
+
+  .nav-title {
+    font-size: 0.95rem;
   }
 }
 

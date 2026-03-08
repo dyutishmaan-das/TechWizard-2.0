@@ -598,6 +598,20 @@ body {
   box-shadow: 0 0 25px rgba(255, 45, 120, 0.4);
 }
 
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-disabled {
+  background: #3a3a4a !important;
+  border-color: #555 !important;
+  color: #888 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 40px rgba(255, 45, 120, 0.6), 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -1217,39 +1231,6 @@ body {
 }
 
 /* ===== FORMS ===== */
-.register-section {
-  background: linear-gradient(180deg, #080820 0%, var(--dark-bg) 100%);
-}
-
-.feedback-section {
-  background: linear-gradient(180deg, #0b0925 0%, #050510 100%);
-}
-
-.form-wrapper {
-  position: relative;
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-.form-decoration {
-  position: absolute;
-  top: -30px;
-  left: -30px;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(180, 79, 255, 0.2) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.reg-form {
-  background: var(--dark-card);
-  border: 1px solid var(--border-glow);
-  border-radius: 20px;
-  padding: 40px;
-  position: relative;
-  z-index: 1;
-}
 
 .feedback-wrap .reg-form {
   border-color: rgba(0, 245, 255, 0.3);
@@ -1482,7 +1463,6 @@ body {
 
 /* ===== FAQ SECTION ===== */
 .faq-section {
-  background: var(--dark-bg);
   padding: 80px 0;
 }
 

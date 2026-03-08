@@ -66,130 +66,18 @@
                 <p class="section-desc">Fill in your team details below. On submission you'll be redirected to our
                     official Google Form to complete payment &amp; confirmation.</p>
             </div>
-            <div class="form-wrapper">
-                <div class="form-decoration"></div>
-                <form id="registration-form" class="reg-form">
-                    <div class="form-section-title">👥 Team Information</div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="team-name">Team Name <span class="req">*</span></label>
-                            <input type="text" id="team-name" name="team_name" placeholder="e.g. CodeCrusaders"
-                                required />
-                        </div>
-                        <div class="form-group">
-                            <label for="college-name">College / University <span class="req">*</span></label>
-                            <input type="text" id="college-name" name="college_name" placeholder="Your institution name"
-                                required />
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="problem-domain">Problem Domain <span class="req">*</span></label>
-                            <select id="problem-domain" name="problem_domain" required>
-                                <option value="" disabled selected>Select a domain</option>
-                                <option>Student Innovation (Hardware/Software)</option>
-                                <option>Women Safety</option>
-                                <option>Smart Agriculture</option>
-                                <option>Healthcare &amp; MedTech</option>
-                                <option>Disaster Management</option>
-                                <option>Education</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="team-size">Team Size <span class="req">*</span></label>
-                            <select id="team-size" name="team_size" required>
-                                <option value="" disabled selected>Number of members</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-section-title">🧑‍💻 Team Leader Details</div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="leader-name">Leader Full Name <span class="req">*</span></label>
-                            <input type="text" id="leader-name" name="leader_name" placeholder="Full name" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="leader-email">Leader Email <span class="req">*</span></label>
-                            <input type="email" id="leader-email" name="leader_email" placeholder="leader@email.com"
-                                required />
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="leader-phone">Leader Phone <span class="req">*</span></label>
-                            <input type="tel" id="leader-phone" name="leader_phone" placeholder="+91 XXXXX XXXXX"
-                                required />
-                        </div>
-                        <div class="form-group">
-                            <label for="leader-year">Year of Study <span class="req">*</span></label>
-                            <select id="leader-year" name="leader_year" required>
-                                <option value="" disabled selected>Select year</option>
-                                <option>1st Year</option>
-                                <option>2nd Year</option>
-                                <option>3rd Year</option>
-                                <option>4th Year</option>
-                                <option>Postgraduate</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-section-title">📝 Project Details</div>
-                    <div class="form-group full-width">
-                        <label for="project-title">Project Title <span class="req">*</span></label>
-                        <input type="text" id="project-title" name="project_title"
-                            placeholder="Brief title of your project idea" required />
-                    </div>
-                    <div class="form-group full-width">
-                        <label for="project-desc">Project Description <span class="req">*</span></label>
-                        <textarea id="project-desc" name="project_desc" rows="4"
-                            placeholder="Describe your project idea in 100–200 words..." required></textarea>
-                    </div>
-
-                    <div class="form-group full-width checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="female-confirm" name="female_confirm" required />
-                            <span class="checkmark"></span>
-                            I confirm that our team includes <strong>at least 1 female member</strong> (mandatory)
-                        </label>
-                    </div>
-                    <div class="form-group full-width checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="rules-confirm" name="rules_confirm" required />
-                            <span class="checkmark"></span>
-                            I agree to the hackathon rules and confirm that all team members are registered participants
-                        </label>
-                    </div>
-
-                    <div class="form-submit">
-                        <button type="submit" id="reg-submit-btn" class="btn btn-primary btn-large">
-                            <span>Submit →</span>
-                        </button>
-                        <p class="form-note">You will be redirected to the official Google Form to submit your full team
-                            details and complete payment (₹1,500 per team).</p>
-                    </div>
-                </form>
+            <div class="form-submit">
+                <button type="submit" id="reg-submit-btn" class="btn btn-primary btn-large"
+                    onclick="window.location.href='https://unstop.com/o/vJQeFIq?lb=ezeYu3Ad&utm_medium=Share&utm_source=WhatsApp';">
+                    <span>Register Now →</span>
+                </button>
+                <p class="form-note">You will be redirected to the official Google Form to submit your full team
+                    details and complete payment (₹1,500 per team).</p>
             </div>
+            </form>
+        </div>
         </div>
     </section>
-
-    <!-- MODAL -->
-    <div class="modal-overlay" id="modal-overlay">
-        <div class="modal-box">
-            <div class="modal-icon">🚀</div>
-            <h3 id="modal-title">Redirecting to Google Form</h3>
-            <p id="modal-desc">You're being redirected to the official Google Form. Please complete all fields there to
-                finalise your registration.</p>
-            <div class="modal-btns">
-                <a href="#" id="modal-proceed-btn" class="btn btn-primary" target="_blank" rel="noopener">Proceed to
-                    Google Form</a>
-                <button class="btn btn-outline" id="modal-cancel">Cancel</button>
-            </div>
-        </div>
-    </div>
 
     <footer class="footer">
         <div class="container">

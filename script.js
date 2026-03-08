@@ -84,6 +84,16 @@ navLinks.querySelectorAll('a').forEach(a => {
 
     function pad(n) { return String(n).padStart(2, '0'); }
 
+    function registrationOver() {
+        const regButtons = document.querySelectorAll('a[href="register.html"], .nav-cta, #reg-submit-btn');
+        regButtons.forEach(btn => {
+            btn.innerHTML = 'Registration Closed';
+            btn.classList.add('btn-disabled');
+            btn.setAttribute('href', 'javascript:void(0)');
+            btn.onclick = null;
+        });
+    }
+
     function tick() {
         const now = Date.now();
         const diff = target - now;
@@ -92,6 +102,7 @@ navLinks.querySelectorAll('a').forEach(a => {
             document.getElementById('cd-hours').textContent = '00';
             document.getElementById('cd-mins').textContent = '00';
             document.getElementById('cd-secs').textContent = '00';
+            registrationOver();
             return;
         }
         document.getElementById('cd-days').textContent = pad(Math.floor(diff / 86400000));

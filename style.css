@@ -746,7 +746,7 @@ body {
 
 /* ===== ABOUT ===== */
 .about-section {
-  background: linear-gradient(180deg, var(--dark-bg) 0%, #080820 100%);
+  background: linear-gradient(180deg, var(--dark-bg) 0%, transparent 100%);
 }
 
 .about-grid {
@@ -819,7 +819,7 @@ body {
 
 /* ===== PROBLEMS ===== */
 .problems-section {
-  background: linear-gradient(180deg, #080820 0%, #050515 100%);
+  background: linear-gradient(180deg, var(--dark-bg) 0%, transparent 100%);
 }
 
 .problems-grid {
@@ -882,7 +882,7 @@ body {
 
 /* ===== SCHEDULE ===== */
 .schedule-section {
-  background: var(--dark-bg);
+  background: linear-gradient(180deg, var(--dark-bg) 0%, transparent 100%);
   position: relative;
 }
 
@@ -1032,7 +1032,7 @@ body {
 
 /* ===== PRIZES ===== */
 .prizes-section {
-  background: linear-gradient(180deg, #050515 0%, #080820 100%);
+  background: linear-gradient(180deg, var(--dark-bg) 0%, transparent 100%);
 }
 
 .prizes-grid {
@@ -1176,9 +1176,14 @@ body {
   background-clip: text;
 }
 
+/* ===== Register ===== */
+.register-section {
+  background: linear-gradient(180deg, var(--dark-bg) 0%, transparent 100%);
+}
+
 /* ===== RULES ===== */
 .rules-section {
-  background: #080820;
+  background: linear-gradient(180deg, var(--dark-bg) 0%, transparent 100%);
 }
 
 .rules-grid {
@@ -1225,7 +1230,7 @@ body {
 
 /* ===== GALLERY ===== */
 .gallery-section {
-  background: var(--dark-bg);
+  background: linear-gradient(180deg, var(--dark-bg) 0%, transparent 100%);
 }
 
 .gallery-grid {

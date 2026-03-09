@@ -329,7 +329,8 @@ body {
 /* ===== ABOUT HARIDWAR UNIVERSITY ===== */
 
 .hu-section {
-  margin-top: -320px;
+  position: relative;
+  z-index: 5;
 }
 
 .hu-grid {
@@ -364,10 +365,12 @@ body {
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  min-height: 180vh;
+  min-height: 100vh;
+  height: auto;
   display: flex;
-  align-items: top;
+  align-items: flex-start;
   justify-content: center;
+  padding-bottom: 120px;
   /*background: var(--gradient-hero);*/
   overflow: hidden;
   z-index: 1;

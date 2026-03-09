@@ -259,53 +259,7 @@ body {
   letter-spacing: 1px;
 }
 
-/* ===== QUICK NAV CARDS (homepage) ===== */
-.quick-nav-section {
-  background: linear-gradient(180deg, #050510 0%, #080820 100%);
-  padding-top: 0;
-}
 
-.quick-nav-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.qn-card {
-  display: block;
-  text-decoration: none;
-  background: var(--dark-card);
-  border: 1px solid var(--border-glow);
-  border-radius: 16px;
-  padding: 28px 24px;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.qn-card:hover {
-  border-color: var(--neon-purple);
-  transform: translateY(-6px);
-  box-shadow: 0 12px 35px rgba(180, 79, 255, 0.2);
-}
-
-.qn-icon {
-  font-size: 2.2rem;
-  display: block;
-  margin-bottom: 12px;
-}
-
-.qn-card h3 {
-  font-family: 'Orbitron', monospace;
-  font-size: 0.85rem;
-  color: var(--neon-cyan);
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-}
-
-.qn-card p {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-}
 
 .hamburger {
   display: none;
@@ -406,37 +360,7 @@ body {
   max-width: 900px;
 }
 
-.hero-logos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  margin-bottom: 20px;
-}
 
-.univ-logo {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.5));
-}
-
-.event-logo {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  border-radius: 50%;
-  filter: drop-shadow(0 0 15px rgba(180, 79, 255, 0.7));
-}
-
-.hero-subtitle {
-  font-family: 'Orbitron', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 6px;
-  color: var(--neon-cyan);
-  margin-bottom: 16px;
-  opacity: 0.9;
-}
 
 .hero-title {
   font-family: 'Orbitron', monospace;
@@ -638,60 +562,7 @@ body {
   font-size: 1rem;
 }
 
-/* Scroll indicator */
-.hero-scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: bounce 2s infinite;
-}
 
-.hero-scroll-indicator span {
-  display: block;
-  width: 24px;
-  height: 40px;
-  border: 2px solid var(--neon-purple);
-  border-radius: 12px;
-  position: relative;
-}
-
-.hero-scroll-indicator span::after {
-  content: '';
-  position: absolute;
-  top: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 8px;
-  background: var(--neon-cyan);
-  border-radius: 2px;
-  animation: scrollDot 2s infinite;
-}
-
-@keyframes bounce {
-
-  0%,
-  100% {
-    transform: translateX(-50%) translateY(0);
-  }
-
-  50% {
-    transform: translateX(-50%) translateY(8px);
-  }
-}
-
-@keyframes scrollDot {
-  0% {
-    opacity: 1;
-    top: 6px;
-  }
-
-  100% {
-    opacity: 0;
-    top: 22px;
-  }
-}
 
 /* ===== SECTIONS ===== */
 .section {
@@ -1325,58 +1196,7 @@ body {
   line-height: 1.5;
 }
 
-/* ===== CONTACT ===== */
-.contact-section {
-  background: #050515;
-}
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.contact-card {
-  background: var(--dark-card);
-  border: 1px solid var(--border-glow);
-  border-radius: 16px;
-  padding: 32px 24px;
-  text-align: center;
-  transition: all 0.3s;
-}
-
-.contact-card:hover {
-  border-color: var(--neon-cyan);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 245, 255, 0.15);
-}
-
-.contact-icon {
-  font-size: 2.2rem;
-  margin-bottom: 14px;
-}
-
-.contact-card h3 {
-  font-family: 'Orbitron', monospace;
-  font-size: 0.85rem;
-  color: var(--neon-cyan);
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-}
-
-.contact-card a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-  word-break: break-word;
-}
-
-.contact-card a:hover {
-  color: var(--neon-pink);
-}
 
 /* ===== FAQ SECTION ===== */
 .faq-section {
@@ -1476,9 +1296,23 @@ body {
   gap: 16px;
 }
 
+.footer-logo-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
 .footer-logo {
   width: 54px;
   height: 54px;
+  object-fit: contain;
+}
+
+.footer-hu-logo {
+  width: 54px;
+  max-width: 28vw;
+  height: auto;
   object-fit: contain;
 }
 
@@ -1844,9 +1678,7 @@ body {
     padding: 6px;
   }
 
-  .reg-form {
-    padding: 20px;
-  }
+
 
   .page-hero {
     padding: 100px 16px 40px;

@@ -109,7 +109,7 @@ if (hamburger && navLinks) {
     function tick() {
         const now = Date.now();
         const diff = target - now;
-        
+
         if (diff <= 0) {
             if (daysEl) daysEl.textContent = '00';
             if (hoursEl) hoursEl.textContent = '00';
@@ -118,13 +118,13 @@ if (hamburger && navLinks) {
             registrationOver();
             return;
         }
-        
+
         if (daysEl) daysEl.textContent = pad(Math.floor(diff / 86400000));
         if (hoursEl) hoursEl.textContent = pad(Math.floor((diff % 86400000) / 3600000));
         if (minsEl) minsEl.textContent = pad(Math.floor((diff % 3600000) / 60000));
         if (secsEl) secsEl.textContent = pad(Math.floor((diff % 60000) / 1000));
     }
-    
+
     tick();
     setInterval(tick, 1000);
 })();
@@ -134,7 +134,7 @@ document.querySelectorAll('.faq-question').forEach(q => {
     q.addEventListener('click', () => {
         const item = q.parentElement;
         if (!item) return;
-        
+
         const isActive = item.classList.contains('active');
 
         // Close all other items
@@ -153,42 +153,16 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const tabId = btn.dataset.tab;
         const targetPanel = document.getElementById(tabId);
-        
+
         if (!targetPanel) return;
 
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-        
+
         btn.classList.add('active');
         targetPanel.classList.add('active');
     });
 });
-
-/* ===== STAR RATING ===== */
-const stars = document.querySelectorAll('.star');
-const ratingInput = document.getElementById('fb-rating');
-const starRatingContainer = document.getElementById('star-rating');
-
-if (stars.length > 0 && ratingInput) {
-    stars.forEach(star => {
-        star.addEventListener('mouseenter', () => {
-            const val = +star.dataset.val;
-            stars.forEach(s => s.classList.toggle('active', +s.dataset.val <= val));
-        });
-        star.addEventListener('click', () => {
-            const val = +star.dataset.val;
-            ratingInput.value = val;
-            stars.forEach(s => s.classList.toggle('active', +s.dataset.val <= val));
-        });
-    });
-    
-    if (starRatingContainer) {
-        starRatingContainer.addEventListener('mouseleave', () => {
-            const saved = +ratingInput.value;
-            stars.forEach(s => s.classList.toggle('active', +s.dataset.val <= saved));
-        });
-    }
-}
 
 /* ===== MODAL HELPER ===== */
 const modalOverlay = document.getElementById('modal-overlay');
@@ -199,7 +173,7 @@ const modalCancel = document.getElementById('modal-cancel');
 
 function openModal(title, desc, url) {
     if (!modalOverlay || !modalTitle || !modalDesc || !modalProceed) return;
-    
+
     modalTitle.textContent = title;
     modalDesc.textContent = desc;
     modalProceed.href = url;
@@ -219,32 +193,10 @@ function closeModal() {
     document.body.style.overflow = '';
 }
 
-/* ===== REGISTRATION FORM ===== */
-const registrationForm = document.getElementById('registration-form');
-if (registrationForm) {
-    registrationForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (!this.checkValidity()) { this.reportValidity(); return; }
-
-        openModal(
-            '🚀 Proceed to Registration Form',
-            'You\'re being redirected to the official Google Form to complete your team registration and payment. Entry fee: ₹1,500 per team.',
-            GOOGLE_FORM_REG_URL
-        );
-    });
-}
-
-/* ===== FEEDBACK FORM ===== */
-const feedbackForm = document.getElementById('feedback-form');
-if (feedbackForm) {
-    feedbackForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (!ratingInput.value) {
-            alert('Please select a star rating before submitting.');
-            return;
-        }
-        if (!this.checkValidity()) { this.reportValidity(); return; }
-
+/* ===== FEEDBACK BUTTON ===== */
+const fbBtn = document.getElementById('fb-submit-btn');
+if (fbBtn) {
+    fbBtn.addEventListener('click', () => {
         openModal(
             '📝 Proceed to Feedback Form',
             'Thank you for your feedback! You\'re being redirected to the official Google Form to complete and submit your response.',

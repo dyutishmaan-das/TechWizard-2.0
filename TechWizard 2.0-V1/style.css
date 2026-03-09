@@ -757,7 +757,7 @@ body {
 }
 
 .about-text p {
-  color: var(--text-secondary);
+  color: #fff;
   font-size: 1.05rem;
   margin-bottom: 20px;
   line-height: 1.8;

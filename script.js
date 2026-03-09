@@ -184,6 +184,9 @@ function openModal(title, desc, url) {
 if (modalCancel) {
     modalCancel.addEventListener('click', closeModal);
 }
+if (modalProceed) {
+    modalProceed.addEventListener('click', closeModal);
+}
 if (modalOverlay) {
     modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
 }
@@ -216,7 +219,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.08 });
 
-document.querySelectorAll('.problem-card, .rule-item, .prize-card, .contact-card, .gallery-item, .tl-item, .highlight-item').forEach(el => {
+document.querySelectorAll('.problem-card, .rule-item, .prize-card, .gallery-item, .tl-item, .highlight-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(24px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';

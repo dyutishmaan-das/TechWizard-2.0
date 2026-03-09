@@ -686,9 +686,7 @@ body {
   transform: translateX(5px);
 }
 
-.hi-icon {
-  font-size: 1.2rem;
-}
+
 
 .about-image-wrap {
   position: relative;
@@ -1542,7 +1540,7 @@ body {
 }
 
 .sponsor-img1 {
-  height: 40px;
+  height: 50px;
   object-fit: contain;
   opacity: 0.9;
   transition: all 0.3s ease;
@@ -1638,10 +1636,8 @@ body {
 
   .problems-grid,
   .rules-grid,
-  .contact-grid,
   .footer-top,
-  .gallery-grid,
-  .quick-nav-grid {
+  .gallery-grid {
     grid-template-columns: 1fr;
   }
 

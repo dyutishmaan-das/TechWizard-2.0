@@ -372,7 +372,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-bottom: 150px;
+  padding-bottom: 180px;
   /*background: var(--gradient-hero);*/
   overflow: hidden;
   z-index: 1;

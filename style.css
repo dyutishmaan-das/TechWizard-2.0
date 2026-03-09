@@ -331,7 +331,8 @@ body {
 .hu-section {
   position: relative;
   z-index: 5;
-  padding-top: 40px;
+  padding-top: 0;
+  margin-top: -220px;
 }
 
 .hu-grid {
@@ -344,7 +345,7 @@ body {
 .hu-text p {
   margin-bottom: 15px;
   line-height: 1.7;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .hu-image img {
@@ -371,7 +372,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-bottom: 20px;
+  padding-bottom: 180px;
   /*background: var(--gradient-hero);*/
   overflow: hidden;
   z-index: 1;
@@ -401,7 +402,7 @@ body {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 120px 24px 60px;
+  padding: 120px 24px 30px;
   max-width: 900px;
 }
 
@@ -756,7 +757,7 @@ body {
 }
 
 .about-text p {
-  color: var(--text-secondary);
+  color: #fff;
   font-size: 1.05rem;
   margin-bottom: 20px;
   line-height: 1.8;
@@ -940,7 +941,7 @@ body {
 .timeline::before {
   content: '';
   position: absolute;
-  left: 150px;
+  left: 159px;
   top: 0;
   bottom: 0;
   width: 2px;
@@ -956,7 +957,7 @@ body {
 
 .tl-item {
   display: grid;
-  grid-template-columns: 130px 40px 1fr;
+  grid-template-columns: 140px 40px 1fr;
   align-items: flex-start;
   gap: 0;
   padding: 25px 0;
@@ -1350,7 +1351,7 @@ body {
 
 /* ===== FAQ SECTION ===== */
 .faq-section {
-  padding: 80px 0;
+  padding: 50px 0;
 }
 
 .faq-grid {

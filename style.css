@@ -331,6 +331,7 @@ body {
 .hu-section {
   position: relative;
   z-index: 5;
+  padding-top: 40px;
 }
 
 .hu-grid {
@@ -370,7 +371,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-bottom: 120px;
+  padding-bottom: 20px;
   /*background: var(--gradient-hero);*/
   overflow: hidden;
   z-index: 1;

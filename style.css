@@ -93,6 +93,13 @@ body {
 .nav-left {
   display: flex;
   align-items: center;
+  margin-left: -50px;
+}
+
+@media (max-width: 1200px) {
+  .nav-left {
+    margin-left: 0;
+  }
 }
 
 .nav-brand {

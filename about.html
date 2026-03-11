@@ -14,6 +14,8 @@
         rel="stylesheet" />
     <link rel="icon" type="image/jpeg" href="https://i.postimg.cc/4dKyYx45/techwizard_logo_DUe_Fv3V1.png" />
     <link rel="stylesheet" href="style.css" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -129,32 +131,51 @@
 
     <!-- Gallery -->
     <section class="section gallery-section">
-        <div class="container">
+        <div class="small-container">
             <div class="section-header">
                 <span class="section-tag">Gallery</span>
                 <h2 class="section-title">Event <span class="highlight">Highlights</span></h2>
             </div>
-            <div class="gallery-grid">
-                <div class="gallery-item g-large">
-                    <img src="poster.jpeg" alt="TechWizard 2.0 Official Poster" />
-                    <div class="gallery-overlay"><span>Official Poster</span></div>
+            <!-- Swiper Carousel -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="zoom-image">
+                            <img src="https://i.postimg.cc/wBCcjrH8/NATIONAL-HACKATHON-Poster-page-0001.jpg"
+                                alt="Highlight 1" />
+                        </div>
+                        <div class="slide-caption" data-swiper-parallax="-300">Official Poster</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="zoom-image">
+                            <img src="https://i.postimg.cc/4dKyYx45/techwizard_logo_DUe_Fv3V1.png" alt="Highlight 2" />
+                        </div>
+                        <div class="slide-caption" data-swiper-parallax="-300">TechWizard logo</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="zoom-image">
+                            <img src="https://i.postimg.cc/h4zQjphH/HU.png" alt="Highlight 3" />
+                        </div>
+                        <div class="slide-caption" data-swiper-parallax="-300">Haridwar University</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="zoom-image">
+                            <img src="https://i.postimg.cc/QMbxqDc4/Tarun.jpg" alt="Highlight 4" />
+                        </div>
+                        <div class="slide-caption" data-swiper-parallax="-300">Team Synergy</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="zoom-image">
+                            <img src="https://i.postimg.cc/cCJdc1Y4/Shubham.jpg" alt="Highlight 5" />
+                        </div>
+                        <div class="slide-caption" data-swiper-parallax="-300">Leadership</div>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="techwizard-logo-DUeFv3V1.jpeg" alt="TechWizard 2.0 Event Logo" />
-                    <div class="gallery-overlay"><span>Event Logo</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="Picture2.png" alt="Haridwar University Logo" />
-                    <div class="gallery-overlay"><span>Haridwar University</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="schedule.jpeg" alt="Event Schedule" />
-                    <div class="gallery-overlay"><span>Schedule</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="problems and rules.jpeg" alt="Problem Categories &amp; Rules" />
-                    <div class="gallery-overlay"><span>Problems &amp; Rules</span></div>
-                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
@@ -217,6 +238,36 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Swiper Initialization -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "fade",
+            fadeEffect: {
+                crossFade: true
+            },
+            parallax: true,
+            speed: 1000,
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 1,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            }
+        });
+    </script>
 
     <!-- Modal Overlay -->
     <div class="modal-overlay" id="modal-overlay">

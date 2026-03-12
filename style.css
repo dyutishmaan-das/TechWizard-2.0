@@ -61,10 +61,57 @@ body {
   border-radius: 3px;
 }
 
+/* ===== ANNOUNCEMENT BAR ===== */
+.announcement-bar {
+  background: var(--gradient-accent);
+  color: #fff;
+  padding: 6px 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  height: 30px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-wrapper {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee-scroll 40s linear infinite;
+}
+
+.marquee-wrapper span {
+  padding-right: 50px;
+  /* Space between messages */
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 /* ===== NAVBAR ===== */
 #navbar {
   position: fixed;
-  top: 0;
+  top: 30px;
+  /* Offset by announcement bar */
   left: 0;
   right: 0;
   z-index: 1000;
@@ -230,7 +277,8 @@ body {
 .page-hero {
   position: relative;
   z-index: 1;
-  padding: 140px 24px 70px;
+  padding: 170px 24px 70px;
+  /* Increased top padding */
   text-align: center;
   background: linear-gradient(180deg, #07051a 0%, #0a0726 50%, #080820 100%);
   border-bottom: 1px solid var(--border-glow);
@@ -328,11 +376,12 @@ body {
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 30px);
   height: auto;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  padding-top: 30px;
   padding-bottom: 180px;
   /*background: var(--gradient-hero);*/
   overflow: hidden;
@@ -1771,7 +1820,7 @@ body {
   }
 
   .nav-title {
-    font-size: 0.9rem;
+    font-size: 0.6rem;
   }
 
   .problems-grid,
@@ -1852,9 +1901,76 @@ body {
     margin: 10px 0;
   }
 
+  .hero {
+    padding-bottom: 10px;
+  }
+
+  .hero-bottom-fade {
+    height: 100px !important;
+  }
+
+  .hero-content {
+    z-index: 15;
+  }
+
+  .hero-sponsors {
+    margin-top: 20px;
+  }
+
   .hu-section {
-    margin-top: 0;
-    /* Reset negative margin on mobile if needed */
+    margin-top: -75px;
+    position: relative;
+    z-index: 15;
+    padding-bottom: 40px;
+  }
+
+  .hu-text p {
+    text-align: center;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+
+  .hu-image img {
+    max-width: 200px;
+    margin: 20px auto 0;
+    filter: drop-shadow(0 0 15px rgba(0, 245, 255, 0.2));
+  }
+
+  /* Swiper Carousel Mobile Fix */
+  .swiper-slide {
+    height: 300px !important;
+    min-height: 300px !important;
+  }
+
+  .zoom-image {
+    min-height: 300px !important;
+  }
+
+  .slide-caption {
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+
+  /* Registration Details Mobile Fix */
+  .register-details-box {
+    padding: 20px;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .info-icon {
+    font-size: 2rem;
+  }
+
+  .info-card {
+    padding: 30px 20px;
   }
 }
 

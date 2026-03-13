@@ -1439,6 +1439,45 @@ body {
   color: var(--neon-pink);
 }
 
+.footer-social {
+  display: flex;
+  gap: 14px;
+  margin-top: 16px;
+  align-items: center;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+}
+
+.social-icon.instagram:hover {
+  border-color: #e1306c;
+  background: rgba(225, 48, 108, 0.15);
+  color: #e1306c;
+  box-shadow: 0 0 16px rgba(225, 48, 108, 0.3);
+}
+
+.social-icon.linkedin:hover {
+  border-color: #0a66c2;
+  background: rgba(10, 102, 194, 0.15);
+  color: #0a66c2;
+  box-shadow: 0 0 16px rgba(10, 102, 194, 0.3);
+}
+
 .footer-bottom {
   text-align: center;
   padding-top: 24px;

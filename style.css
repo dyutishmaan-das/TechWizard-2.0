@@ -1783,6 +1783,10 @@ body {
 
 /* Mobile Devices (768px and below) */
 @media (max-width: 768px) {
+  .about-btn-wrap {
+    text-align: center;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -1827,6 +1831,19 @@ body {
   .rules-grid,
   .footer-top {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-grid {
+    gap: 20px;
+  }
+
+  .page-hero {
+    padding: 140px 16px 30px;
+  }
+
+  .section {
+    padding: 20px 0;
   }
 
   .prizes-grid {

@@ -1,14 +1,14 @@
-# 🔮 TechWizard 2.0 – National Hackathon
+# 🔮 Tech Wizard 2.0 – National Hackathon
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-Official website for **TechWizard 2.0** — India's premier national-level hackathon hosted by Haridwar University, powered by Trojan Tech Club & Unstop.
+Official website for **Tech Wizard 2.0** — India's premier national-level hackathon hosted by Haridwar University, powered by Trojan Tech Club & Unstop.
 
 ## 🎯 About The Event 
 
-TechWizard 2.0 is a 36-hour intense coding marathon where the brightest minds from across the nation converge to solve real-world problems. 
+Tech Wizard 2.0 is a 36-hour intense coding marathon where the brightest minds from across the nation converge to solve real-world problems. 
 - **Date:** 20th & 21st March 2026
 - **Venue:** Haridwar University, Uttarakhand
 - **Prize Pool:** ₹93,000 Total (1st: ₹51K | 2nd: ₹31K | 3rd: ₹11K)
@@ -26,7 +26,7 @@ Participants can choose from 6 diverse challenge categories:
 
 ## 🚀 Website Features
 
-The TechWizard 2.0 website is a multi-page web application featuring a modern Cyberpunk / Neon aesthetic:
+The Tech Wizard 2.0 website is a multi-page web application featuring a modern Cyberpunk / Neon aesthetic:
 - **Responsive Design:** Fully optimized for Mobile, Tablet, and Desktop viewing.
 - **Dynamic Elements:** Interactive particle backgrounds, hover effects, and scroll-triggered animations.
 - **Form Integrations:** Custom Registration and Feedback forms with client-side validation, redirecting seamlessly to Google Forms.
@@ -35,7 +35,7 @@ The TechWizard 2.0 website is a multi-page web application featuring a modern Cy
 ## 📁 Repository Structure
 
 ```
-TechWizard 2.0/
+Tech Wizard 2.0/
 ├── index.html       # Landing page (Hero, Quick Links)
 ├── about.html       # Event details & Gallery
 ├── problems.html    # 6 Challenge Domains

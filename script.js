@@ -1,5 +1,5 @@
 /* ============================================================
-   TechWizard 2.0 – script.js
+   Tech Wizard 2.0 – script.js
    IMPORTANT: Replace GOOGLE_FORM_REG_URL and GOOGLE_FORM_FB_URL
    with your actual Google Form short URLs before deploying.
    ============================================================ */

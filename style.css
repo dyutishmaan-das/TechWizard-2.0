@@ -252,127 +252,120 @@ body {
   width: 100%;
 }
 
-/* Navbar Dropdown */
+/* Navbar Dropdown - Unified UI */
 .nav-dropdown {
   position: relative;
   display: inline-block;
+}
+
+.nav-dropdown > .nav-item {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
 }
 
 .nav-dropdown-content {
   display: none;
   position: absolute;
-  top: 150%;
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(13, 13, 43, 0.95);
+  transform: translateX(-50%) translateY(10px);
+  background-color: rgba(13, 13, 43, 0.98);
   backdrop-filter: blur(15px);
-  min-width: 220px;
+  min-width: 240px;
   border: 1px solid var(--border-glow);
   border-radius: 12px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.8);
   z-index: 1000;
-  overflow: hidden;
-  padding: 8px 0;
+  padding: 8px;
   opacity: 0;
   transition: all 0.3s ease;
 }
 
-.nav-dropdown-content a {
-  color: var(--text-secondary);
-  padding: 12px 24px;
+.dropdown-item {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px !important;
+  color: var(--text-secondary) !important;
   text-decoration: none;
-  display: block;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 500 !important;
+  border-radius: 8px;
   transition: all 0.3s ease;
-  white-space: nowrap;
-  text-align: left;
 }
 
-.nav-dropdown-content a::after {
-  display: none;
-}
-
-.nav-dropdown-content a:hover {
-  background-color: rgba(180, 79, 255, 0.1);
+.dropdown-item i {
+  width: 20px;
+  font-size: 1rem;
   color: var(--neon-cyan);
-  padding-left: 30px;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 242, 255, 0.1);
+  color: var(--neon-cyan) !important;
+  padding-left: 20px !important;
+}
+
+.dropdown-item:hover i {
+  opacity: 1;
 }
 
 .nav-dropdown:hover .nav-dropdown-content {
   display: block;
-  top: 100%;
   opacity: 1;
-  animation: fadeUp 0.3s ease forwards;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-drop-icon {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.nav-dropdown:hover .nav-drop-icon {
+  transform: rotate(180deg);
 }
 
 @media (max-width: 768px) {
-  .nav-dropdown {
-    width: 100%;
-    transition: background 0.3s ease;
-    border-radius: 8px;
-  }
-
-  /* Highlight active dropdown block */
-  .nav-dropdown.active {
-    background: rgba(255, 255, 255, 0.03);
-    padding-bottom: 5px;
-  }
-
   .nav-dropdown-content {
     position: static;
-    display: block;
-    /* Change from flex to block for max-height animation */
-    max-height: 0;
-    overflow: hidden;
-    visibility: hidden;
-    transform: none;
-    background: transparent;
+    display: none;
+    background: rgba(180, 79, 255, 0.05); /* Subtle purple tint */
     border: none;
+    border-left: 2px solid var(--neon-cyan);
     box-shadow: none;
     padding: 0;
-    min-width: 100%;
-    margin: 0;
-    opacity: 0;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.3s;
-  }
-
-  .nav-dropdown-content a {
-    padding: 12px 30px;
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    text-align: left;
-    width: 100%;
-
+    margin-top: 10px;
     margin-left: 15px;
-    transition: all 0.3s ease;
+    opacity: 0;
+    transform: none;
   }
 
-  .nav-dropdown-content a:hover {
+  .dropdown-item {
+    padding: 12px 20px !important;
+    font-size: 1.0rem;
+    color: #ccc !important;
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .dropdown-item i {
     color: var(--neon-cyan);
-    border-left-color: var(--neon-cyan);
-    background: rgba(0, 245, 255, 0.05);
-    padding-left: 35px;
+    font-size: 1.1rem;
   }
 
   .nav-dropdown.active .nav-dropdown-content {
-    max-height: 200px;
-    /* Sufficient for 2-3 links */
+    display: flex;
+    flex-direction: column;
     opacity: 1;
-    visibility: visible;
-    margin-top: 5px;
   }
 
   .nav-dropdown.active .nav-drop-icon {
     transform: rotate(180deg);
-    color: var(--neon-cyan);
-  }
-
-  .nav-dropdown>a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
   }
 }
 
@@ -457,18 +450,6 @@ body {
   background: var(--neon-cyan);
   border-radius: 2px;
   transition: all 0.3s;
-}
-
-.hamburger.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ===== ABOUT HARIDWAR UNIVERSITY ===== */
@@ -1857,7 +1838,7 @@ body {
 
 .coord-info h3 {
   font-family: 'Orbitron', monospace;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin-bottom: 8px;
   color: #fff;
 }
@@ -2037,13 +2018,6 @@ body {
     display: block;
     width: 100%;
     text-align: left;
-  }
-
-  .nav-links .nav-cta {
-    margin-top: 10px;
-    text-align: center;
-    width: 100%;
-    border-radius: 8px !important;
   }
 
   .nav-links.open {

@@ -100,20 +100,42 @@ if (navbar) {
     });
 }
 
-/* ===== HAMBURGER ===== */
+/* ===== HAMBURGER & MOBILE DROPDOWN ===== */
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
+const navDropdowns = document.querySelectorAll('.nav-dropdown');
+
 if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
         navLinks.classList.toggle('open');
         hamburger.classList.toggle('open');
     });
 
-    navLinks.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
+    // Handle clicks on nav links
+    navLinks.querySelectorAll('li > a').forEach(a => {
+        a.addEventListener('click', (e) => {
+            const parent = a.parentElement;
+            
+            // If it's a dropdown, toggle it on mobile instead of closing menu
+            if (parent.classList.contains('nav-dropdown') && window.innerWidth <= 768) {
+                e.preventDefault();
+                parent.classList.toggle('active');
+                return;
+            }
+
+            // For normal links, close the menu
             navLinks.classList.remove('open');
             hamburger.classList.remove('open');
         });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('open');
+        }
     });
 }
 

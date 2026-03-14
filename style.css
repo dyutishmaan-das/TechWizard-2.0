@@ -307,25 +307,72 @@ body {
 }
 
 @media (max-width: 768px) {
+  .nav-dropdown {
+    width: 100%;
+    transition: background 0.3s ease;
+    border-radius: 8px;
+  }
+
+  /* Highlight active dropdown block */
+  .nav-dropdown.active {
+    background: rgba(255, 255, 255, 0.03);
+    padding-bottom: 5px;
+  }
+
   .nav-dropdown-content {
     position: static;
-    display: none;
+    display: block;
+    /* Change from flex to block for max-height animation */
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
     transform: none;
     background: transparent;
     border: none;
     box-shadow: none;
     padding: 0;
     min-width: 100%;
-    margin-top: 10px;
+    margin: 0;
+    opacity: 0;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.3s;
   }
 
-  .nav-dropdown.active .nav-dropdown-content,
-  .nav-dropdown:hover .nav-dropdown-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+  .nav-dropdown-content a {
+    padding: 12px 30px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    text-align: left;
+    width: 100%;
+
+    margin-left: 15px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-dropdown-content a:hover {
+    color: var(--neon-cyan);
+    border-left-color: var(--neon-cyan);
+    background: rgba(0, 245, 255, 0.05);
+    padding-left: 35px;
+  }
+
+  .nav-dropdown.active .nav-dropdown-content {
+    max-height: 200px;
+    /* Sufficient for 2-3 links */
     opacity: 1;
+    visibility: visible;
+    margin-top: 5px;
+  }
+
+  .nav-dropdown.active .nav-drop-icon {
+    transform: rotate(180deg);
+    color: var(--neon-cyan);
+  }
+
+  .nav-dropdown>a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
   }
 }
 
@@ -410,6 +457,18 @@ body {
   background: var(--neon-cyan);
   border-radius: 2px;
   transition: all 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ===== ABOUT HARIDWAR UNIVERSITY ===== */
@@ -1798,7 +1857,7 @@ body {
 
 .coord-info h3 {
   font-family: 'Orbitron', monospace;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   margin-bottom: 8px;
   color: #fff;
 }
@@ -1953,18 +2012,38 @@ body {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 80%;
+    width: 85%;
     max-width: 320px;
     height: 100vh;
-    background: rgba(13, 13, 43, 0.98);
-    backdrop-filter: blur(25px);
+    background: rgba(8, 8, 25, 0.98);
+    backdrop-filter: blur(20px);
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 100px 40px 40px;
+    gap: 15px;
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-left: 1px solid var(--border-glow);
     z-index: 1000;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-links .nav-cta {
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    border-radius: 8px !important;
   }
 
   .nav-links.open {
@@ -1982,7 +2061,7 @@ body {
   }
 
   .nav-title {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 
   .problems-grid,
@@ -2161,7 +2240,7 @@ body {
 /* Small Mobile (480px and below) */
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .hero-countdown {

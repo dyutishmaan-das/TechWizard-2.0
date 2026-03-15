@@ -125,14 +125,29 @@ if (hamburger && navLinks) {
         a.addEventListener('click', (e) => {
             const parent = a.parentElement;
             
-            // If it's a dropdown, toggle it on mobile instead of closing menu
-            if (parent.classList.contains('nav-dropdown') && window.innerWidth <= 768) {
-                e.preventDefault();
-                parent.classList.toggle('active');
-                return;
+            // Toggle dropdown on click for all screen sizes
+            if (parent.classList.contains('nav-dropdown')) {
+                e.stopPropagation();
+                
+                // If it's desktop, close other open dropdowns first (if any)
+                if (window.innerWidth > 768) {
+                    navDropdowns.forEach(d => {
+                        if (d !== parent) d.classList.remove('active');
+                    });
+                }
+                
+                const isActive = parent.classList.toggle('active');
+                
+                // If on mobile, don't close the main menu when clicking a dropdown toggle
+                if (window.innerWidth <= 768) {
+                    return;
+                }
+                
+                // On desktop, if we didn't just open a dropdown, continue to normal closing logic
+                if (isActive) return;
             }
 
-            // For normal links, close the menu
+            // For normal links (or closing dropdowns on desktop), close the menu
             navLinks.classList.remove('open');
             hamburger.classList.remove('open');
             document.body.classList.remove('nav-menu-open');
@@ -140,8 +155,15 @@ if (hamburger && navLinks) {
         });
     });
 
-    // Close menu when clicking outside
+    // Close menu or dropdowns when clicking outside
     document.addEventListener('click', (e) => {
+        // Close search for dropdowns to close
+        navDropdowns.forEach(d => {
+            if (!d.contains(e.target)) {
+                d.classList.remove('active');
+            }
+        });
+
         if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
             navLinks.classList.remove('open');
             hamburger.classList.remove('open');

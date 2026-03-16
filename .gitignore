@@ -20,7 +20,8 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # Auto-sync script
-# auto-sync.ps1
+auto-sync.ps1
+start-auto-sync.bat
 
 # Ignore specific project folders
 Resources/

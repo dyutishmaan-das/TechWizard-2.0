@@ -43,11 +43,20 @@ const GOOGLE_FORM_FB_URL = 'https://forms.gle/YOUR_FEEDBACK_FORM_ID';
 
 /* ===== UI HARDENING & ANTI-THEFT ===== */
 (function() {
+    const OFFICIAL_DOMAIN = 'www.trojan-techwizard.xyz';
+    
     // Check if we are on a local development environment
     const isLocal = window.location.hostname === 'localhost' || 
                     window.location.hostname === '127.0.0.1' || 
                     window.location.protocol === 'file:';
     
+    // 1. Domain Lock: Redirect if hosted on unauthorized domain
+    if (!isLocal && window.location.hostname !== OFFICIAL_DOMAIN && window.location.hostname !== 'trojan-techwizard.xyz') {
+        console.warn("Unauthorized domain detected. Redirecting to official site...");
+        window.location.replace('https://' + OFFICIAL_DOMAIN + window.location.pathname);
+        return;
+    }
+
     // Developer Message in Console
     console.log(
         "%cSTOP! %cThis is a protected website of Tech Wizard 2.0 (Trojan Club).",

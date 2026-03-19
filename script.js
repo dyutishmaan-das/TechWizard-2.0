@@ -57,6 +57,13 @@ const GOOGLE_FORM_FB_URL = 'https://forms.gle/YOUR_FEEDBACK_FORM_ID';
         return;
     }
 
+    console.log("%cTW26 SECURED %cFLAG{SOURCE_CODE_WIZARD_0XFF}", "color: #ff2d78; font-weight: bold; font-size: 20px;", "color: transparent;");
+    console.log("Welcome to the Hub. Type 'showFlag()' to reveal your reward.");
+
+    window.showFlag = function() {
+        console.log("%c[SUCCESS] %cYour final flag is: FLAG{SOURCE_CODE_WIZARD_0XFF}", "color: #00f5ff; font-weight: bold;", "color: #ff2d78; font-weight: bold;");
+    };
+    
     // Developer Message in Console
     console.log(
         "%cSTOP! %cThis is a protected website of Tech Wizard 2.0 (Trojan Club).",

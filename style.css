@@ -1381,9 +1381,30 @@ body {
 }
 
 .rules-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
+}
+
+/* Adjust sizes for desktop row alignment (3 per row) */
+.rules-grid .rule-item {
+  width: calc(33.333% - 20px);
+  min-width: 300px;
+}
+
+/* 2 per row for smaller desktop/tablets */
+@media (max-width: 1024px) {
+  .rules-grid .rule-item {
+    width: calc(50% - 20px);
+  }
+}
+
+/* 1 per row for mobile */
+@media (max-width: 768px) {
+  .rules-grid .rule-item {
+    width: 100%;
+  }
 }
 
 .rule-item {
@@ -1860,7 +1881,7 @@ body {
 }
 
 .poster-content {
-  padding: 30px;
+  padding: 20px 40px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -1871,7 +1892,7 @@ body {
 
 .sponsor-benefits {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-align: left;
 }
 
@@ -2196,6 +2217,11 @@ body {
   transition: transform 0.3s ease;
 }
 
+/* 
+   FLAG{NEON_EYES_ONLY_X101}
+   The neon runs deep in this one. 
+*/
+
 .coord-action:hover {
   transform: scale(1.2);
 }
@@ -2336,8 +2362,7 @@ body {
     margin: 0 auto;
   }
 
-  .problems-grid,
-  .rules-grid {
+  .problems-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -2757,7 +2782,7 @@ body {
 
   /* Registration Details Mobile Fix */
   .register-details-box {
-    padding: 20px;
+    padding: 15px 20px;
   }
 
   .team-row {
@@ -2990,7 +3015,7 @@ body {
   background: linear-gradient(135deg, rgba(180, 79, 255, 0.1), rgba(0, 245, 255, 0.05));
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
-  padding: 30px;
+  padding: 20px 30px;
   margin-bottom: 40px;
   backdrop-filter: blur(10px);
 }

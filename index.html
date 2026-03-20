@@ -153,10 +153,10 @@
 <body>
     <div class="announcement-bar">
         <div class="marquee-wrapper">
-            <span>🚩 Important Update : After receiving multiple queries and considering the concern raised, we have
-                decided to remove the “one girl mandatory per team” rule.</span>
-            <span>🚩 Important Update : After receiving multiple queries and considering the concern raised, we have
-                decided to remove the “one girl mandatory per team” rule.</span>
+            <span>🚫 REGISTRATION CLOSED - ALL SEATS FILLED! 🚫</span>
+            <span>🚫 REGISTRATION CLOSED - ALL SEATS FILLED! 🚫</span>
+            <span>🚫 REGISTRATION CLOSED - ALL SEATS FILLED! 🚫</span>
+            <span>🚫 REGISTRATION CLOSED - ALL SEATS FILLED! 🚫</span>
         </div>
     </div>
     <canvas id="particles-canvas"></canvas>
@@ -252,7 +252,9 @@
                 <div class="cd-block"><span id="cd-secs">00</span><small>Secs</small></div>
             </div>
             <div class="hero-btns">
-                <a href="register.html" class="btn btn-primary">Register Now</a>
+                <a href="javascript:void(0);" onclick="showClosedModal();" class="btn btn-primary"
+                    style="background: #444; border-color: #666; cursor: not-allowed; opacity: 0.8;">Registration Closed
+                    ×</a>
                 <a href="about.html" class="btn btn-outline">Learn More</a>
             </div>
 
@@ -554,6 +556,25 @@
         </div>
     </div>
 
+    <!-- Registration Closed Modal -->
+    <div id="closedModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-icon">🚫</span>
+            <h2 class="modal-title">Registration Closed!</h2>
+            <p class="modal-text">All seats for Tech Wizard 2.0 have been successfully filled. We have reached our
+                maximum capacity of participants. Thank you for your overwhelming interest!</p>
+            <button onclick="closeModal()" class="btn btn-primary modal-close">Got it</button>
+        </div>
+    </div>
+
+    <script>
+        function showClosedModal() {
+            document.getElementById('closedModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('closedModal').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
